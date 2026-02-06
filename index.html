@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CyberPay | electriknalexuse v2.5</title>
+    <meta name="description" content="Cyberpunk payment terminal for secure financial node access.">
+    <meta name="theme-color" content="#050505">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="CyberPay Terminal">
+    <meta property="og:description" content="Secure QR generation for Sberbank payments.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #050505;
+            color: #00f3ff;
+            font-family: 'Roboto Mono', monospace;
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .orbitron { font-family: 'Orbitron', sans-serif; }
+        
+        .scanlines {
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), 
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+            z-index: 50;
+            background-size: 100% 3px, 4px 100%;
+            pointer-events: none;
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0) }
+            20% { transform: translate(-1px, 1px) }
+            40% { transform: translate(-1px, -1px) }
+            60% { transform: translate(1px, 1px) }
+            80% { transform: translate(1px, -1px) }
+            100% { transform: translate(0) }
+        }
+        .glitch-hover:hover {
+            animation: glitch 0.2s cubic-bezier(.25, .46, .45, .94) both infinite;
+            text-shadow: 1px 0 #ff00ff, -1px 0 #00f3ff;
+        }
+
+        @keyframes pulse-cyan {
+            0%, 100% { box-shadow: 0 0 10px rgba(0, 243, 255, 0.2); }
+            50% { box-shadow: 0 0 25px rgba(0, 243, 255, 0.5); }
+        }
+        .pulse-border {
+            animation: pulse-cyan 2s infinite;
+        }
+
+        html, body, #root {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.40.0",
+    "qrcode.react": "https://esm.sh/qrcode.react@^4.2.0",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.3"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div class="scanlines"></div>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>

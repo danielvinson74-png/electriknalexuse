@@ -1,0 +1,5 @@
+{
+  "name": "electriknalexuse",
+  "description": "A cyberpunk-themed interface for generating Sberbank payment QR codes based on user identification data.",
+  "requestFramePermissions": []
+}
