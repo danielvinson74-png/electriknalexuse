@@ -163,7 +163,7 @@ const App: React.FC = () => {
                     <span className="text-[#00f3ff] text-[8px] orbitron tracking-[0.2em] uppercase">AUDIT: {cyberLog?.status}</span>
                   </div>
                   <p className="text-zinc-300 text-[10px] leading-tight lowercase italic">
-                    > {cyberLog?.log || 'analyzing stream...'}
+                    &gt; {cyberLog?.log || 'analyzing stream...'}
                   </p>
                 </div>
 
